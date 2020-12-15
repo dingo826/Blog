@@ -1,6 +1,26 @@
 
 
-## v-for 为什么加 key（为了严谨，后续选中的时候出错）
-提示错误： Custom elements in iteration require 'v-bind:key' directives 
-备注：不加key的时候，句子编译提示错误。
-无:key属性时，状态默认绑定的是位置；有:key属性时，状态根据key的属性值绑定到了相应的数组元素。
+# Git
+
+git log --pretty=oneline --abbrev-commit。// 历史提交的commit_id
+## Git标签管理
+### 什么是标签
+标签是一个快照。标签是某个版本的别名，为了便于管理，Git 可以给版本取个别名。
+
+### 创建标签
+git tag <name>  // 给当前最新调的commit 打标签
+git tag <name> commit_id //给对应commit_id打标签
+
+创建带有说明的表亲啊，用-a指定标签名，-m指定说明文字
+git tag -a <name> -m "message"
+
+### 删除标签
+git tag -d <tagname>
+
+### 推送标签至远程
+git push origin <tagname>
+git push origin --tags //一次性推送全部尚未推送到远程的本地标签
+
+### 删除远程标签
+git tag -d <tagname>
+git push origin :refs/tags/<tagname>	
